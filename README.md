@@ -1,16 +1,3 @@
----
-license: apache-2.0
-language:
-- en
-tags:
-- data-parallel
-- distributed-training
-- full-finetuning
-- inconsistency-diagnosis
-- alpaca
-- openpangu
----
-
 # Silent Inconsistency in Data-Parallel Full Fine-Tuning  
 ### Experimental Fine-Tuned Models (S1-1 / S1-2 / S1-3)
 
@@ -22,7 +9,13 @@ The models were trained to reproduce and analyze the phenomenon of **worker-leve
 
 ---
 
-## 📌 Background
+## Keywords
+
+data-parallel • distributed-training • full-finetuning • inconsistency-diagnosis • alpaca • openpangu
+
+---
+
+## Background
 
 In synchronous data-parallel training with All-Reduce, model parameters are strictly synchronized after each update step. However, synchronization of parameters does **not** guarantee consistency in worker-level optimization dynamics *before gradient aggregation*.
 
@@ -40,71 +33,78 @@ These metrics can be computed online with negligible overhead and without modify
 
 ---
 
-## 🧠 Base Model
+## Base Model
 
 All three models are fully fine-tuned from:
 
 **Ascend Tribe – openPangu-Embedded-1B-V1.1 (1B parameters)**  
-🔗 https://ai.gitcode.com/ascend-tribe/openPangu-Embedded-1B-V1.1
+https://ai.gitcode.com/ascend-tribe/openPangu-Embedded-1B-V1.1
 
-- Architecture: Causal LM
-- Parameters: ~1B
-- Precision: bf16 mixed precision during training
+- Architecture: Causal LM  
+- Parameters: ~1B  
+- Precision: bf16 mixed precision during training  
 - Training mode: Full-parameter fine-tuning (no LoRA / adapters)
 
 ---
 
-## 📚 Dataset
+## Dataset
 
 Fine-tuned on:
 
 **tatsu-lab / alpaca (Instruction tuning dataset)**  
-🔗 https://huggingface.co/datasets/tatsu-lab/alpaca
+https://huggingface.co/datasets/tatsu-lab/alpaca
 
-- Template format: `Instruction – Input – Response`
-- Maximum sequence length: 1024
-- Loss computed **only on the Response tokens**
-- Prompt and template tokens are masked during loss calculation
+- Template format: `Instruction – Input – Response`  
+- Maximum sequence length: 1024  
+- Loss computed **only on the Response tokens**  
+- Prompt and template tokens are masked during loss calculation  
 
 ---
 
+## Model Repository
 
-## 🧪 Experimental Settings
+Hugging Face Model Hub:  
+https://huggingface.co/jiujiudahaozi/op_pangu
 
-🔗 https://huggingface.co/jiujiudahaozi/op_pangu
+---
 
-### 🔹 S1-1 — Strict Consistency
+## Experimental Settings
+
+### S1-1 — Strict Consistency
 
 - All ranks use the **same random seed**
 - Deterministic `DistributedSampler`
 - Identical shuffling behavior across workers
 
-**Expected behavior:**
+**Expected behavior**
+
 - Low loss dispersion  
 - Low gradient-norm dispersion  
 - High gradient-direction consistency  
 
 ---
 
-### 🔹 S1-2 — Mild Inconsistency
+### S1-2 — Mild Inconsistency
 
-- Rank 0 uses a different random seed
-- Other ranks follow the baseline seed
+- Rank 0 uses a different random seed  
+- Other ranks follow the baseline seed  
 
-**Expected behavior:**
+**Expected behavior**
+
 - Slight increase in worker-level dispersion  
 - Global averaged loss remains smooth  
 
 ---
 
-### 🔹 S1-3 — Significant Inconsistency
+### S1-3 — Significant Inconsistency
 
-- Each rank uses a distinct seed dependent on rank ID
+- Each rank uses a distinct seed dependent on rank ID  
 
-**Expected behavior:**
+**Expected behavior**
+
 - Large loss dispersion  
 - Larger gradient-norm variation  
 - Reduced gradient-direction consistency  
 - Global loss may still appear normal  
 
-
+---
