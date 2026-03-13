@@ -71,6 +71,8 @@ Fine-tuned on:
 
 ## 🧪 Experimental Settings
 
+🔗 https://huggingface.co/jiujiudahaozi/op_pangu
+
 ### 🔹 S1-1 — Strict Consistency
 
 - All ranks use the **same random seed**
