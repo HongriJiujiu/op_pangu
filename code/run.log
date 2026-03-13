@@ -1,0 +1,49 @@
+[2026-02-11 11:22:39,904] torch.distributed.run: [WARNING] 
+[2026-02-11 11:22:39,904] torch.distributed.run: [WARNING] *****************************************
+[2026-02-11 11:22:39,904] torch.distributed.run: [WARNING] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+[2026-02-11 11:22:39,904] torch.distributed.run: [WARNING] *****************************************
+/home/dndx/miniconda3/envs/lihong_oppanggu/lib/python3.10/site-packages/torch_npu/contrib/transfer_to_npu.py:309: ImportWarning: 
+    *************************************************************************************************************
+    The torch.Tensor.cuda and torch.nn.Module.cuda are replaced with torch.Tensor.npu and torch.nn.Module.npu now..
+    The torch.cuda.DoubleTensor is replaced with torch.npu.FloatTensor cause the double type is not supported now..
+    The backend in torch.distributed.init_process_group set to hccl now..
+    The torch.cuda.* and torch.cuda.amp.* are replaced with torch.npu.* and torch.npu.amp.* now..
+    The device parameters have been replaced with npu in the function below:
+    torch.logspace, torch.randint, torch.hann_window, torch.rand, torch.full_like, torch.ones_like, torch.rand_like, torch.randperm, torch.arange, torch.frombuffer, torch.normal, torch._empty_per_channel_affine_quantized, torch.empty_strided, torch.empty_like, torch.scalar_tensor, torch.tril_indices, torch.bartlett_window, torch.ones, torch.sparse_coo_tensor, torch.randn, torch.kaiser_window, torch.tensor, torch.triu_indices, torch.as_tensor, torch.zeros, torch.randint_like, torch.full, torch.eye, torch._sparse_csr_tensor_unsafe, torch.empty, torch._sparse_coo_tensor_unsafe, torch.blackman_window, torch.zeros_like, torch.range, torch.sparse_csr_tensor, torch.randn_like, torch.from_file, torch._cudnn_init_dropout_state, torch._empty_affine_quantized, torch.linspace, torch.hamming_window, torch.empty_quantized, torch._pin_memory, torch.load, torch.set_default_device, torch.Tensor.new_empty, torch.Tensor.new_empty_strided, torch.Tensor.new_full, torch.Tensor.new_ones, torch.Tensor.new_tensor, torch.Tensor.new_zeros, torch.Tensor.to, torch.Tensor.pin_memory, torch.nn.Module.to, torch.nn.Module.to_empty
+    *************************************************************************************************************
+    
+  warnings.warn(msg, ImportWarning)
+/home/dndx/miniconda3/envs/lihong_oppanggu/lib/python3.10/site-packages/torch_npu/contrib/transfer_to_npu.py:260: RuntimeWarning: torch.jit.script and torch.jit.script_method will be disabled by transfer_to_npu, which currently does not support them, if you need to enable them, please do not use transfer_to_npu.
+  warnings.warn(msg, RuntimeWarning)
+[INFO] torch_npu detected. Using NPU fused infer attention.
+[INFO] torch_npu detected. Using NPU fused infer attention.
+[INFO] torch_npu detected. Using NPU fused infer attention.
+[INFO] torch_npu detected. Using NPU fused infer attention.
+[INFO] torch_npu detected. Using NPU fused infer attention.
+[INFO] torch_npu detected. Using NPU fused infer attention.
+[INFO] torch_npu detected. Using NPU fused infer attention.
+[INFO] torch_npu detected. Using NPU fused infer attention.
+初始化 Trainer...
+初始化 Trainer...
+初始化 Trainer...
+初始化 Trainer...
+初始化 Trainer...
+初始化 Trainer...
+初始化 Trainer...
+初始化 Trainer...
+开始训练...
+  0%|          | 0/813 [00:00<?, ?it/s][debug] training_step model type: <class 'torch.nn.parallel.distributed.DistributedDataParallel'>
+[debug] DDP comm hook registered ✅
+[W reducer.cpp:1346] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+[W reducer.cpp:1346] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+[W reducer.cpp:1346] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+[W reducer.cpp:1346] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+[W reducer.cpp:1346] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+[W reducer.cpp:1346] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+[W reducer.cpp:1346] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+[W reducer.cpp:1346] Warning: find_unused_parameters=True was specified in DDP constructor, but did not find any unused parameters in the forward pass. This flag results in an extra traversal of the autograd graph every iteration,  which can adversely affect performance. If your model indeed never has any unused parameters in the forward pass, consider turning this flag off. Note that this warning may be a false positive if your model has flow control causing later iterations to have unused parameters. (function operator())
+  0%|          | 1/813 [00:03<45:03,  3.33s/it]                                               {'loss': 1.6481, 'grad_norm': 30.060943603515625, 'learning_rate': 5e-05, 'epoch': 0.0}
+  0%|          | 1/813 [00:03<45:03,  3.33s/it]  0%|          | 2/813 [00:04<27:54,  2.06s/it]                                               {'loss': 1.6037, 'grad_norm': 13.142374038696289, 'learning_rate': 4.9938499384993856e-05, 'epoch': 0.0}
+  0%|          | 2/813 [00:04<27:54,  2.06s/it]  0%|          | 3/813 [00:05<22:12,  1.64s/it]                                               {'loss': 1.3933, 'grad_norm': 8.860870361328125, 'learning_rate': 4.98769987699877e-05, 'epoch': 0.0}
+  0%|          | 3/813 [00:05<22:12,  1.64s/it]  0%|          | 4/813 [00:06<19:51,  1.47s/it]                                               {'loss': 1.6721, 'grad_norm': 9.493114471435547, 'learning_rate': 4.9815498154981556e-05, 'epoch': 0.0}
+  0%|          | 4/813 [00:06<19:51,  1.47s/it]
