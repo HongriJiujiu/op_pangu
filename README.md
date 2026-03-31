@@ -108,3 +108,7 @@ https://huggingface.co/jiujiudahaozi/op_pangu
 - Global loss may still appear normal  
 
 ---
+
+## Contributors
+
+Hong Li · Zhen Zhou · Honggang Zhang · Yuping Luo · Xinyue Wang · Han Gong · Zhiyuan Liu
